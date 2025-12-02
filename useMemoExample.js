@@ -1,7 +1,7 @@
 const UseMemoExample = () => {
   const [number, setNumber] = React.useState(0);
   const [dark, setDark] = React.useState(false);
-  
+
   // const doubleNumber = slowFunction(number);
   const doubleNumber = React.useMemo(() => {
     slowFunction(number);
@@ -16,6 +16,8 @@ const UseMemoExample = () => {
 
   return (
     <>
+      <h1> Use Memo Example </h1>
+      <br/>
       <input 
         type="number" 
         value={number} 
