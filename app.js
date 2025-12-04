@@ -5,9 +5,9 @@
 const PAGES = {
   HOME: "home",
   USE_STATE: 'UseStateExample',
-  USE_REF: 'UseRefExample',
   USE_EFFECT: 'UseEffectExample',
   USE_MEMO: 'UseMemoExample',
+  USE_REF: 'UseRefExample',
   USE_REDUCER: 'UseReducerExample',
 };
 
