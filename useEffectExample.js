@@ -15,6 +15,7 @@ const UseEffectExample = () => {
             window.removeEventListener('resize', handleResize);
         };
     // by leaving the dependency array empty, this useEffect will only run once on mount
+    // by not adding a dependency array, it would run on every render
     }, []);
     
 

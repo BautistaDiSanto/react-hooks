@@ -8,6 +8,7 @@ const PAGES = {
   USE_EFFECT: 'UseEffectExample',
   USE_MEMO: 'UseMemoExample',
   USE_REF: 'UseRefExample',
+  USE_CONTEXT: 'UseContextExample',
   USE_REDUCER: 'UseReducerExample',
 };
 
@@ -24,11 +25,13 @@ function App() {
           return <UseMemoExample />;
         case PAGES.USE_REF:
           return <UseRefExample />;
+        case PAGES.USE_CONTEXT:
+          return <UseContextExample />;
         case PAGES.USE_REDUCER:
           return <UseReducerExample />;
         case PAGES.HOME:
         default:
-          return <h1>React Hooks Showcase Home</h1>;
+          return <Home />;
     }
   };
 
@@ -40,6 +43,7 @@ function App() {
         <button onClick={() => setCurrentPage(PAGES.USE_EFFECT)}>useEffect</button>
         <button onClick={() => setCurrentPage(PAGES.USE_MEMO)}>useMemo</button>
         <button onClick={() => setCurrentPage(PAGES.USE_REF)}>useRef</button>
+        <button onClick={() => setCurrentPage(PAGES.USE_CONTEXT)}>useContext</button>
         <button onClick={() => setCurrentPage(PAGES.USE_REDUCER)}>useReducer</button>
       </nav>
       <main>
