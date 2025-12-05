@@ -21,7 +21,7 @@ const UseEffectExample = () => {
 
     return (
         <>
-            <div>{windowWidth}</div>
+            <div>{`Window Width: ${windowWidth}px`}</div>
         </>
     );
 }

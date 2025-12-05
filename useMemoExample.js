@@ -4,7 +4,7 @@ const UseMemoExample = () => {
 
   // const doubleNumber = slowFunction(number);
   const doubleNumber = React.useMemo(() => {
-    slowFunction(number);
+    return slowFunction(number);
   }, [number]);
 
   const themeStyles = {
@@ -27,7 +27,7 @@ const UseMemoExample = () => {
       <div style={themeStyles}>
         The number is: {number}
       </div>
-      <div>
+      <div style={themeStyles}>
         The doubled number is: {doubleNumber}
       </div>
     </>
