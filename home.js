@@ -1,7 +1,7 @@
 function Home() {
     return (
         <div>
-            <h1>Hook</h1>
+            <h1>Hook Rules.</h1>
             <h2>1 Call Hooks only at the top level</h2>
             <p>Hooks must always run in the same order each time a component renders.
             This means: never inside conditionals, loops, or nested functions.
