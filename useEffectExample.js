@@ -21,6 +21,8 @@ const UseEffectExample = () => {
 
     return (
         <>
+            <h1> Use Memo Example </h1>
+            <br/>
             <div>{`Window Width: ${windowWidth}px`}</div>
         </>
     );
