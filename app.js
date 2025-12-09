@@ -10,7 +10,8 @@ const PAGES = {
   USE_REF: 'UseRefExample',
   USE_CONTEXT: 'UseContextExample',
   USE_REDUCER: 'UseReducerExample',
-  USE_CALLBACK: 'UseCallbackExample'
+  USE_CALLBACK: 'UseCallbackExample',
+  CUSTOM_HOOK: 'CustomHookExample',
 };
 
 function App() {
@@ -32,6 +33,8 @@ function App() {
           return <UseReducerExample />;
         case PAGES.USE_CALLBACK:
           return <UseCallbackExample />;
+        case PAGES.CUSTOM_HOOK:
+          return <CustomHookExample />;
         case PAGES.HOME:
           return <Home />;
         default:
@@ -50,6 +53,7 @@ function App() {
         <button onClick={() => setCurrentPage(PAGES.USE_CONTEXT)}>useContext</button>
         <button onClick={() => setCurrentPage(PAGES.USE_REDUCER)}>useReducer</button>
         <button onClick={() => setCurrentPage(PAGES.USE_CALLBACK)}>useCallback</button>
+        <button onClick={() => setCurrentPage(PAGES.CUSTOM_HOOK)}>CustomHook</button>
       </nav>
       <main>
         {renderPage()}
