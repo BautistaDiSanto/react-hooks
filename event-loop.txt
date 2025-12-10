@@ -1,12 +1,46 @@
 Event Loop
 
-Promises, MutationObservers, queueMicrotask, etc -> Micro-task Queue
 DOM Events, Network, setTimeout/setInterval, -> Macro-task Queue
+Promises, MutationObservers, queueMicrotask, etc -> Micro-task Queue
 
 Event Loop Tick
 1️⃣ Check if Call Stack is empty.
-2️⃣ If Call Stack empty → take the first macro-task from the Macro-task Queue → push to Call Stack.
+2️⃣ If Call Stack empty → take the first macro-task from the Macro-task Queue (initially this is your script) → push to Call Stack.
 3️⃣ Execute that macro-task completely.
 4️⃣ After the macro-task finishes, process all micro-tasks in the Micro-task Queue (Promises, queueMicrotask…).
 5️⃣ Repaint (render) if needed.
 6️⃣ Repeat (loop).
+
+----------------------------------
+EXAMPLE
+----------------------------------
+console.log("Script start"); -> Synchronous 1
+
+setTimeout(() => {
+  console.log("Timeout 1 (macro-task)"); -> Timeout 1
+}, 0);
+
+Promise.resolve().then(() => {
+  console.log("Promise 1 (micro-task)"); -> Promise 1
+
+  Promise.resolve().then(() => {
+    console.log("Promise 2 (micro-task)"); -> Promise 2
+  });
+});
+
+setTimeout(() => {
+  console.log("Timeout 2 (macro-task)"); -> Timeout 2
+}, 0);
+
+console.log("Script end"); -> Synchronous
+------------------------------------
+OUTPUT
+------------------------------------
+script start
+script ends
+
+promise 1 (micro task)
+promise 2 (micro task)
+
+Timeout 1 (macro-task) // after micro-task queue cleared
+Timeout 2 (macro-task) // next macro-task
